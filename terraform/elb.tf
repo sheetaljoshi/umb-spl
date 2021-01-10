@@ -1,6 +1,6 @@
 module "elb" {
   source = "../../"
-  name = "${var.app_prefix}-classic-lb"
+  name   = "${var.app_prefix}-classic-lb"
 
   subnets         = data.aws_subnet_ids.all.ids
   security_groups = [data.aws_security_group.default.id]
@@ -14,10 +14,10 @@ module "elb" {
       lb_protocol       = "https"
     },
     {
-      instance_port     = "8080"
-      instance_protocol = "http"
-      lb_port           = "443"
-      lb_protocol       = "https"
+      instance_port      = "8080"
+      instance_protocol  = "http"
+      lb_port            = "443"
+      lb_protocol        = "https"
       ssl_certificate_id = module.acm.this_acm_certificate_arn
 
     },

@@ -34,11 +34,11 @@ EOF
   }
 }
 
-resource "aws_iam_role_policy" assets_policy" {
+resource "aws_iam_role_policy" "assets_policy" {
   name = "${var.app_prefix}-assets-policy"
   role = aws_iam_role.assets_role.id
 
-  policy = <<-EOF
+  policy = <<EOF
   {
     "Version": "2012-10-17",
     "Statement": [

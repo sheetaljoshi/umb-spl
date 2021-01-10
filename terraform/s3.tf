@@ -4,15 +4,15 @@ resource "aws_s3_bucket" "provisioning" {
   force_destroy = true
 
   tags = {
-    Customer   = "${var.customer}"
+    Customer    = "${var.customer}"
     Environment = "${var.environment}"
   }
-  
+
 }
 
 resource "aws_s3_bucket" "assets" {
-  bucket = "${var.app_prefix}-assets"
-  acl    = "private"
+  bucket        = "${var.app_prefix}-assets"
+  acl           = "private"
   force_destroy = true
 
   tags = {

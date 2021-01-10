@@ -1,5 +1,5 @@
 data "aws_route53_zone" "route_53" {
-  name = "${var.app_prefix}.com"
+  name         = "${var.app_prefix}.com"
   private_zone = false
 }
 
@@ -19,11 +19,11 @@ data "aws_security_group" "default" {
 data "aws_elb_service_account" "this" {}
 
 data "aws_s3_bucket" "assets" {
-    bucket = "assets"
+  bucket = "assets"
 }
 
 data "aws_s3_bucket" "provisioning" {
-    bucket = "provisioning"
+  bucket = "provisioning"
 }
 
 data "aws_s3_bucket_object" "userdata" {
@@ -36,7 +36,7 @@ data "aws_iam_instance_profile" "assets_iam_profile" {
 }
 
 data "aws_iam_policy_document" "assets_iam_policy" {
- name = "assets_iam_policy"
+  name = "assets_iam_policy"
 }
 
 data "aws_iam_role" "assets_iam_role" {

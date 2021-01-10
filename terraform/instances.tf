@@ -6,11 +6,12 @@ module "ec2_instances" {
 
   name                        = "${var.app_prefix}-webserver"
   ami                         = data.aws_ami.latest-ubuntu.id
-  instance_type               = "${var.instance_type}"
+  instance_type               = var.instance_type
   vpc_security_group_ids      = [data.aws_security_group.default.id]
   subnet_id                   = element(tolist(data.aws_subnet_ids.all.ids), 0)
   associate_public_ip_address = true
   user_data                   = data.aws_s3_bucket_object.userdata.body
+  iam_instance_profile        = aws_iam_instance_profile.assets_iam_profile.name
 
   tags = {
     Customer    = "${var.customer}"
@@ -22,7 +23,7 @@ module "ec2_instances" {
   }
 
   provisioner "local-exec" {
-    command = '( crontab -l ; echo "*/1 * * * * root aws s3 sync --delete s3://${var.app_prefix}-assets/html /var/www/html" ) | crontab -'
+    command = "( crontab -l ; echo '*/1 * * * * root aws s3 sync --delete s3://${var.app_prefix}-assets/html /var/www/html' ) | crontab -"
   }
 
 }

@@ -1,7 +1,7 @@
 
 variable "app_prefix" {
   description = "Application prefix for the AWS services that are built"
-  default = "ciscoumb"
+  default     = "ciscoumb"
 }
 
 variable "environment" {
