@@ -30,7 +30,7 @@ resource "aws_s3_bucket_object" "assets_subdirectory" {
 }
 
 resource "aws_s3_bucket_object" "userdata" {
-  bucket = aws_s3_bucket.provisioning.name
+  bucket = aws_s3_bucket.provisioning.bucket
   key    = "userdata.sh"
   source = "../provisioning/userdata.sh"
 }

@@ -20,6 +20,7 @@ variable "aws_credentials_path" {
 
 variable "region" {
   default = "us-east-1"
+  type = string
 }
 
 variable "profile" {

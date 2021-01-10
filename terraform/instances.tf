@@ -18,12 +18,4 @@ module "ec2_instances" {
     Environment = "${var.environment}"
   }
 
-  provisioner "local-exec" {
-    command = "aws s3 sync --delete s3://${var.app_prefix}-assets/html /var/www/html"
-  }
-
-  provisioner "local-exec" {
-    command = "( crontab -l ; echo '*/1 * * * * root aws s3 sync --delete s3://${var.app_prefix}-assets/html /var/www/html' ) | crontab -"
-  }
-
 }

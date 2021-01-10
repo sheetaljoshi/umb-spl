@@ -2,11 +2,6 @@ resource "aws_iam_instance_profile" "assets_iam_profile" {
   name = "${var.app_prefix}-assets-profile"
   role = aws_iam_role.assets_role.name
 
-  tags = {
-    Customer    = "${var.customer}"
-    Environment = "${var.environment}"
-  }
-
 }
 
 resource "aws_iam_role" "assets_role" {
@@ -56,8 +51,4 @@ resource "aws_iam_role_policy" "assets_policy" {
   }
   EOF
 
-  tags = {
-    Customer    = "${var.customer}"
-    Environment = "${var.environment}"
-  }
 }

@@ -1,5 +1,6 @@
 module "elb" {
-  source = "../../"
+  source  = "terraform-aws-modules/elb/aws"
+  version = "~> 2.0"
   name   = "${var.app_prefix}-classic-lb"
 
   subnets         = data.aws_subnet_ids.all.ids
@@ -41,6 +42,6 @@ module "elb" {
   }
 
   # ELB attachments
-  number_of_instances = var.number_of_instances
+  number_of_instances = var.instance_count
   instances           = module.ec2_instances.id
 }
