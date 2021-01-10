@@ -37,9 +37,15 @@ variable "instance_count" {
   default     = 2
 }
 
-variable "key_name" {
-  description = "AWS EC2 Key name for SSH access"
-  type        = string
+#variable "key_name" {
+#  description = "AWS EC2 Key name for SSH access"
+#  type        = string
+#}
+
+variable "domain_name" {
+    description = "Domain Name"
+    type = string 
+    
 }
 
 variable "platform" {

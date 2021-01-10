@@ -10,12 +10,13 @@ module "ec2_instances" {
   vpc_security_group_ids      = [data.aws_security_group.default.id]
   subnet_id                   = element(tolist(data.aws_subnet_ids.all.ids), 0)
   associate_public_ip_address = true
-  user_data                   = data.aws_s3_bucket_object.userdata.body
-  iam_instance_profile        = aws_iam_instance_profile.assets_iam_profile.name
+  user_data                   = file("../provisioning/userdata.sh")
+  #user_data                   = data.aws_s3_bucket_object.userdata.body
+  #iam_instance_profile        = aws_iam_instance_profile.assets_iam_profile.name
 
   tags = {
-    Customer    = "${var.customer}"
-    Environment = "${var.environment}"
+    Customer    = var.customer
+    Environment = var.environment
   }
 
 }

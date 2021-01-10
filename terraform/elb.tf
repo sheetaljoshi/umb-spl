@@ -11,15 +11,15 @@ module "elb" {
     {
       instance_port     = "80"
       instance_protocol = "http"
-      lb_port           = "443"
-      lb_protocol       = "https"
+      lb_port           = "80"
+      lb_protocol       = "http"
     },
     {
       instance_port      = "8080"
       instance_protocol  = "http"
-      lb_port            = "443"
-      lb_protocol        = "https"
-      ssl_certificate_id = module.acm.this_acm_certificate_arn
+      lb_port            = "8080"
+      lb_protocol        = "http"
+      # when domain_name is present run this with uncommented
 
     },
   ]
