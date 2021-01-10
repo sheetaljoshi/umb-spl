@@ -1,1 +1,0 @@
-*/1 * * * * root aws s3 sync --delete s3://ciscoumbspl /var/www/html
