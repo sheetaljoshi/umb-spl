@@ -25,8 +25,8 @@ module "asg" {
   desired_capacity          = 2
   wait_for_capacity_timeout = 0
   min_elb_capacity          = 1
-  wait_for_elb_capacity     = true
   enable_monitoring         = var.enable_monitoring
+  wait_for_elb_capacity     = 1
 
 
   image_id                    = data.aws_ami.latest-ubuntu.id
