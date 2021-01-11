@@ -1,10 +1,10 @@
 module "zones" {
-  count = "${var.domain_name == "" ? 0 : 1}"
+  count = var.domain_name == "" ? 0 : 1
   source = "terraform-aws-modules/route53/aws//modules/zones"
   version = "~> 1.0"
 
   zones = {
-    "${var.domain_name}" = {
+    "${var.app_prefix}.${var.domain_name}" = {
       comment = "${var.app_prefix} Domain Name"
       tags = {
         Customer    = var.customer
@@ -16,7 +16,7 @@ module "zones" {
 }
 
 module "records" {
-  count = "${var.domain_name == "" ? 0 : 1}"
+  count = var.domain_name == "" ? 0 : 1
   source  = "terraform-aws-modules/route53/aws//modules/records"
   version = "~> 1.0"
   #zone_id = module.zones.this_route53_zone_zone_id["${var.app_prefix}.com"]

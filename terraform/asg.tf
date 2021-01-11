@@ -1,15 +1,9 @@
-######
-# Launch configuration and autoscaling group
-######
 module "asg" {
   source = "terraform-aws-modules/autoscaling/aws"
 
   name = "${var.app_prefix}-asg"
 
   # Launch configuration
-  #
-  # launch_configuration = "my-existing-launch-configuration" # Use the existing launch configuration
-  # create_lc = false # disables creation of launch configuration
   lc_name = "${var.app_prefix}-lc"
 
   security_groups = [module.webserver_sg.this_security_group_id, data.aws_security_group.default.id]
@@ -21,8 +15,8 @@ module "asg" {
   vpc_zone_identifier       = data.aws_subnet_ids.all.ids
   health_check_type         = "EC2"
   min_size                  = 1
-  max_size                  = 2
-  desired_capacity          = 2
+  max_size                  = var.instance_count
+  desired_capacity          = var.instance_count
   wait_for_capacity_timeout = 0
   min_elb_capacity          = 1
   enable_monitoring         = var.enable_monitoring

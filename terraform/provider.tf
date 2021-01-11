@@ -1,4 +1,8 @@
 provider "aws" {
+  region  = var.region 
+}
+
+provider "aws" {
   shared_credentials_file = var.aws_credentials_path
   alias                   = "ciscoumb"
   profile                 = var.profile
