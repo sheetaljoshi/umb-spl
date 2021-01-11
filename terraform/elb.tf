@@ -4,7 +4,7 @@ module "elb" {
   name   = "${var.app_prefix}-classic-lb"
 
   subnets         = data.aws_subnet_ids.all.ids
-  security_groups = [data.aws_security_group.default.id]
+  security_groups = [module.webserver_sg.this_security_group_id, data.aws_security_group.default.id]
   internal        = false
 
   listener = [

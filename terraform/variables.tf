@@ -31,6 +31,10 @@ variable "autoscale" {
   default = true
 }
 
+variable enable_monitoring {
+  default = true
+}
+
 variable "instance_count" {
   description = "Number of instances to launch"
   type        = number
@@ -45,6 +49,7 @@ variable "instance_count" {
 variable "domain_name" {
     description = "Domain Name"
     type = string 
+    default = ""
     
 }
 
