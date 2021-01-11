@@ -39,3 +39,7 @@ Please give few minutes for app_url to be available, load balancer status to bec
 | Name | Description |
 |------|-------------|
 | app\_url | Application URL |
+
+## Known Issues
+The project is in it's miminalistic form, you will see errors if you checkout the project on a different path(no state reference) and execute apply after have tried provisioned already.
+Resource existence checks will be added soon.
