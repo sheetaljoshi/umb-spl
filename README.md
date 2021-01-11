@@ -11,6 +11,7 @@ Tested against Terraform v0.14.3. Please submit issues for any problems.
 
 To run this project, execute
 
+$ cd terraform
 $ terraform init
 $ terraform plan
 $ terraform apply
