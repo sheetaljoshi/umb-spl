@@ -21,6 +21,8 @@ $ terraform apply
 
 and for passing variables to these commands please visit terraform docs [here](https://www.terraform.io/docs/configuration/variables.html)
 
+Please give few minutes for app_url to be available, load balancer status to become active. 
+
 ## Requirements
 * Set up AWS credentials, follow steps [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 * Install terrform, install instructions can be found here on terrform [website](https://learn.hashicorp.com/tutorials/terraform/install-cli)
