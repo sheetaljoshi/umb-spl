@@ -3,9 +3,10 @@ This is a WIP provisioning project space. This project aims to provision load ba
 
 The project is in it's very simplistic form. DNS and SSL support added, but not completely tested. Custom networking support will be added soon. 
 
-Set aws_credentials_path variable if you would like to override default location ~/.aws/credentials. 
-
 Tested against Terraform v0.14.3. Please submit issues for any problems.
+
+## Prerequisites
+If you are planning to use this project, you are expected to know basics of AWS and Terrform.
 
 ## Usage
 
@@ -18,8 +19,8 @@ $ terraform plan
 $ terraform apply
 ```
 
-## Defaults
-Region defaults to us-east-1. Defaults all network (vpc, subnets).
+## Requirements
+Set up AWS credentials. Follow steps [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 ## Inputs
 | Name | Description | Type | Default | Required |
