@@ -22,7 +22,9 @@ $ terraform apply
 and for passing variables to these commands please visit terraform docs [here](https://www.terraform.io/docs/configuration/variables.html)
 
 ## Requirements
-Set up AWS credentials. Follow steps [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+* Set up AWS credentials, follow steps [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
+* Install terrform, install instructions can be found here on terrform [website](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
 
 ## Inputs
 | Name | Description | Type | Default | Required |
