@@ -11,10 +11,12 @@ Tested against Terraform v0.14.3. Please submit issues for any problems.
 
 To run this project, execute
 
+```bash
 $ cd terraform
 $ terraform init
 $ terraform plan
 $ terraform apply
+```
 
 ## Defaults
 Region defaults to us-east-1. Defaults all network (vpc, subnets).
