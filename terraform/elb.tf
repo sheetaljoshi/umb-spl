@@ -13,15 +13,7 @@ module "elb" {
       instance_protocol = "http"
       lb_port           = "80"
       lb_protocol       = "http"
-    },
-    {
-      instance_port      = "8080"
-      instance_protocol  = "http"
-      lb_port            = "8080"
-      lb_protocol        = "http"
-      # when domain_name is present run this with uncommented
-
-    },
+    }
   ]
 
   health_check = {
@@ -42,6 +34,6 @@ module "elb" {
   }
 
   # ELB attachments
-  number_of_instances = var.instance_count
-  instances           = module.ec2_instances.id
+  #number_of_instances = var.instance_count
+  #instances           = module.ec2_instances.id
 }
