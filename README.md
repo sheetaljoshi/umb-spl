@@ -25,7 +25,7 @@ Set up AWS credentials. Follow steps [here](https://docs.aws.amazon.com/cli/late
 ## Inputs
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| insance\_count | Number of instances to create and attach to ELB | `number` | `2` | no |
+| instance\_count | Number of instances to create and attach to ELB | `number` | `2` | no |
 | region | Region | `string` | `us-east-1` | no |
 | aws\_credentials\_path | Credentials Path | `string` | `~/.aws/credentials` | no |
 
