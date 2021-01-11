@@ -19,6 +19,8 @@ $ terraform plan
 $ terraform apply
 ```
 
+and for passing variables to these commands please visit terraform docs [here](https://www.terraform.io/docs/configuration/variables.html)
+
 ## Requirements
 Set up AWS credentials. Follow steps [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
